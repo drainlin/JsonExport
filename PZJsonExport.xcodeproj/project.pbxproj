@@ -13,7 +13,7 @@
 		1913B35D207F0CA300F4498F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1913B35B207F0CA300F4498F /* Main.storyboard */; };
 		19FD631D20807FE2001F03ED /* NoodleLineNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FD631920807FE2001F03ED /* NoodleLineNumberView.m */; };
 		19FD631E20807FE2001F03ED /* NoodleLineNumberMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FD631B20807FE2001F03ED /* NoodleLineNumberMarker.m */; };
-		6281477B2B29787D00EA9D2C /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281477A2B29787D00EA9D2C /* Extension+String.swift */; };
+		6281477B2B29787D00EA9D2C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281477A2B29787D00EA9D2C /* Extensions.swift */; };
 		628147832B2AAE7100EA9D2C /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628147822B2AAE7100EA9D2C /* MainWindowController.swift */; };
 		867EA0BD9EEC90C1D241E208 /* Pods_PZJsonExport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A49BBAD443288364969FE15 /* Pods_PZJsonExport.framework */; };
 		C6041BD92081D914007ABB13 /* PZParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6041BD82081D914007ABB13 /* PZParse.swift */; };
@@ -36,7 +36,7 @@
 		1A49BBAD443288364969FE15 /* Pods_PZJsonExport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PZJsonExport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F435FCC38720FA560E8CE4 /* Pods-PZJsonExport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PZJsonExport.release.xcconfig"; path = "Pods/Target Support Files/Pods-PZJsonExport/Pods-PZJsonExport.release.xcconfig"; sourceTree = "<group>"; };
 		2A414CE9369129295D5EEE54 /* Pods-PZJsonExport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PZJsonExport.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PZJsonExport/Pods-PZJsonExport.debug.xcconfig"; sourceTree = "<group>"; };
-		6281477A2B29787D00EA9D2C /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		6281477A2B29787D00EA9D2C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		628147822B2AAE7100EA9D2C /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		C6041BD82081D914007ABB13 /* PZParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PZParse.swift; sourceTree = "<group>"; };
 		C6041BE5208261E5007ABB13 /* PZConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PZConstant.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				C6041BD82081D914007ABB13 /* PZParse.swift */,
-				6281477A2B29787D00EA9D2C /* Extension+String.swift */,
+				6281477A2B29787D00EA9D2C /* Extensions.swift */,
 			);
 			name = Utilites;
 			sourceTree = "<group>";
@@ -250,7 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19FD631D20807FE2001F03ED /* NoodleLineNumberView.m in Sources */,
-				6281477B2B29787D00EA9D2C /* Extension+String.swift in Sources */,
+				6281477B2B29787D00EA9D2C /* Extensions.swift in Sources */,
 				1913B358207F0CA300F4498F /* ViewController.swift in Sources */,
 				1913B356207F0CA300F4498F /* AppDelegate.swift in Sources */,
 				19FD631E20807FE2001F03ED /* NoodleLineNumberMarker.m in Sources */,

@@ -43,14 +43,14 @@ class PZJsonInfo {
 
 class PZParse {
     private let jsonInfo = PZJsonInfo.shared
-    open let headerKey = "header"
-    open let messagesKey = "messages"
+    public let headerKey = "header"
+    public let messagesKey = "messages"
 
     private func removeAll() {
         jsonInfo.removeAll()
     }
 
-    func parse(_ jsonString: String, handle: @escaping (_ content: [String: String]?, _ error: Error?) -> Void) {
+    func parse(_ jsonString: String, mode: OutputPropertyMode, handle: @escaping (_ content: [String: String]?, _ error: Error?) -> Void) {
         runOnBackground {
             guard let data = jsonString.data(using: String.Encoding.utf8) else {
                 return
@@ -64,12 +64,12 @@ class PZParse {
                     if object.keys.isEmpty {
                         return
                     }
-                    self.parse(json: JSON(object))
+                    self.parse(json: JSON(object), mode: mode)
                 } else if let object = json as? [Any], let first = object.first {
                     if object.isEmpty {
                         return
                     }
-                    self.parse(json: JSON(first))
+                    self.parse(json: JSON(first), mode: mode)
                 }
 
                 let header = [self.makeupCopyrights(header: true),
@@ -169,7 +169,7 @@ class PZParse {
 
 private extension PZParse {
     /// 其中 json: JSON 是字典
-    func parse(_ className: String? = nil, json: JSON) {
+    func parse(_ className: String? = nil, json: JSON, mode: OutputPropertyMode) {
         let shared = PZJsonInfo.shared
         var tmpClassName = shared.rootClassName
         if let tmpName = className {
@@ -179,7 +179,16 @@ private extension PZParse {
         }
 
         var headerInfoString = ""
-        for (name, subJson): (String, JSON) in json {
+        for (originName, subJson): (String, JSON) in json {
+            var name = originName
+            switch mode {
+            case .DefaultMode:
+                break
+            case .LowerCamelMode:
+                name = name.convertJsonKeyName(.camel)
+            case .SnakeMode:
+                name = name.convertJsonKeyName(.underscore)
+            }
             var qualifier = ""
             var type = ""
             if name == "id" {
@@ -187,12 +196,20 @@ private extension PZParse {
             }
 
             var key = name
+
             if check(name) == true {
                 key += KEYWORDSUFFIX
                 if jsonInfo.mappingKeywordsTable[tmpClassName] == nil {
                     jsonInfo.mappingKeywordsTable[tmpClassName] = ["@\"\(key)\":@\"\(name)\""]
                 } else {
                     jsonInfo.mappingKeywordsTable[tmpClassName]?.append("@\"\(key)\":@\"\(name)\"")
+                }
+            }
+            if mode != .DefaultMode {
+                if jsonInfo.mappingKeywordsTable[tmpClassName] == nil {
+                    jsonInfo.mappingKeywordsTable[tmpClassName] = ["@\"\(name)\":@\"\(originName)\""]
+                } else {
+                    jsonInfo.mappingKeywordsTable[tmpClassName]?.append("@\"\(name)\":@\"\(originName)\"")
                 }
             }
 
@@ -203,7 +220,7 @@ private extension PZParse {
                 if first?.type == .dictionary {
                     type = "NSArray <\(jsonInfo.classPrefix ?? "")\(key.capitalizingFirstLetter()) *> *"
                     shared.mappingTable[tmpClassName] = key
-                    parse(key, json: first!)
+                    parse(key, json: first!, mode: mode)
                 } else if first?.type == .string {
                     type = "NSArray <NSString *> *"
                 } else if first?.type == .number {
@@ -214,7 +231,7 @@ private extension PZParse {
             case .dictionary:
                 qualifier = "strong"
                 type = "\(jsonInfo.classPrefix ?? "")\(key.capitalizingFirstLetter()) *"
-                parse(key, json: subJson)
+                parse(key, json: subJson, mode: mode)
             case .string:
                 qualifier = "copy"
                 type = "NSString *"
@@ -222,8 +239,7 @@ private extension PZParse {
                 qualifier = "assign"
                 let tmpNumber: NSNumber = subJson.numberValue
                 if String(cString: tmpNumber.objCType) == "d" ||
-                    String(cString: tmpNumber.objCType) == "f"
-                {
+                    String(cString: tmpNumber.objCType) == "f" {
                     type = "CGFloat"
                 } else {
                     type = "NSInteger"
@@ -267,7 +283,7 @@ private extension PZParse {
     /// Returns today date in the format dd/mm/yyyy
     func getTodayFormattedDay() -> String {
         let components = (Calendar.current as NSCalendar).components([.day, .month, .year], from: Date())
-        return "\(components.day!)/\(components.month!)/\(components.year!)"
+        return "\(components.year!)/\(components.month!)/\(components.day!)"
     }
 
     func runOnBackground(_ task: @escaping () -> Void) {

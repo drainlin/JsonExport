@@ -845,10 +845,10 @@
                                 </connections>
                             </button>
                             <textField focusRingType="none" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="3wr-TH-Nkv" userLabel="Root Class Name">
-                                <rect key="frame" x="20" y="21" width="130" height="22"/>
+                                <rect key="frame" x="20" y="21" width="110" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="DFW-Kh-wmd"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="VLP-dC-byp"/>
+                                    <constraint firstAttribute="width" constant="110" id="VLP-dC-byp"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="根结点类名" drawsBackground="YES" id="nsC-yK-v9u">
                                     <font key="font" metaFont="system"/>
@@ -860,10 +860,10 @@
                                 </connections>
                             </textField>
                             <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="C9t-rN-Axj" userLabel="Classes Prefix">
-                                <rect key="frame" x="160" y="21" width="130" height="22"/>
+                                <rect key="frame" x="140" y="21" width="110" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="UDH-9b-FVH"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="VJV-9j-FVK"/>
+                                    <constraint firstAttribute="width" constant="110" id="VJV-9j-FVK"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="类名前缀" drawsBackground="YES" id="EsS-4f-6hs">
                                     <font key="font" metaFont="system"/>
@@ -874,13 +874,60 @@
                                     <action selector="classPrefixChanged:" target="XfG-lQ-9wD" id="SYn-7c-N4r"/>
                                 </connections>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Pe-Uf-q0h" userLabel="属性名转为小驼峰">
+                                <rect key="frame" x="496" y="23" width="106" height="18"/>
+                                <buttonCell key="cell" type="radio" title="蛇形转小驼峰" bezelStyle="regularSquare" imagePosition="left" inset="2" id="DjS-Vb-49r">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" size="13" name=".PingFangHK-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="selectLowerCalme:" target="XfG-lQ-9wD" id="Z9z-8D-Yio"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ieY-Ay-dNX" userLabel="属性">
+                                <rect key="frame" x="608" y="23" width="106" height="18"/>
+                                <buttonCell key="cell" type="radio" title="小驼峰转蛇形" bezelStyle="regularSquare" imagePosition="left" inset="2" id="AbR-0t-dqH">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" size="13" name=".PingFangHK-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="selectSnack:" target="XfG-lQ-9wD" id="7aZ-CI-TKd"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2Ev-qn-zot">
+                                <rect key="frame" x="384" y="23" width="106" height="18"/>
+                                <buttonCell key="cell" type="radio" title="按键命名属性" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="VLE-4z-5Rm">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" size="13" name=".PingFangHK-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="selectDefault:" target="XfG-lQ-9wD" id="ncs-CW-f7T"/>
+                                </connections>
+                            </button>
+                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nMR-91-KJA" userLabel="Classes Prefix">
+                                <rect key="frame" x="256" y="21" width="110" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="QgP-wo-lRD"/>
+                                    <constraint firstAttribute="height" constant="22" id="dU4-HC-BVN"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="关键词冲突后缀" drawsBackground="YES" id="fcb-Yy-TlT">
+                                    <font key="font" size="13" name=".PingFangHK-Regular"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="keywordDropFixChanged:" target="XfG-lQ-9wD" id="gNG-Vz-WEE"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="pAU-HT-xEe" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="3SU-Ra-Dyo"/>
                             <constraint firstItem="eXo-OC-Brj" firstAttribute="leading" secondItem="pAU-HT-xEe" secondAttribute="trailing" constant="8" id="3r1-3M-4DP"/>
+                            <constraint firstAttribute="bottom" secondItem="4Pe-Uf-q0h" secondAttribute="bottom" constant="24" id="5Tz-Z9-8Gy"/>
                             <constraint firstItem="uht-z3-qOQ" firstAttribute="top" secondItem="pAU-HT-xEe" secondAttribute="bottom" constant="8" id="7Mg-H6-55M"/>
                             <constraint firstItem="u0m-tF-u4g" firstAttribute="top" secondItem="zCR-dD-IEF" secondAttribute="bottom" constant="14" id="8ib-Wp-2mi"/>
                             <constraint firstAttribute="bottom" secondItem="3wr-TH-Nkv" secondAttribute="bottom" constant="21" id="EYf-7D-MqO"/>
+                            <constraint firstAttribute="bottom" secondItem="ieY-Ay-dNX" secondAttribute="bottom" constant="24" id="ErE-eU-Vs2"/>
                             <constraint firstItem="F3M-hv-Ha7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="G9E-ah-Sn4"/>
                             <constraint firstItem="uht-z3-qOQ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="HM5-qb-ctD"/>
                             <constraint firstItem="zCR-dD-IEF" firstAttribute="leading" secondItem="uht-z3-qOQ" secondAttribute="trailing" constant="8" id="Hgk-o4-qGK"/>
@@ -889,11 +936,14 @@
                             <constraint firstItem="F3M-hv-Ha7" firstAttribute="top" secondItem="u0m-tF-u4g" secondAttribute="bottom" constant="20" id="M1N-RK-NtH"/>
                             <constraint firstItem="u0m-tF-u4g" firstAttribute="leading" secondItem="uht-z3-qOQ" secondAttribute="trailing" constant="8" id="Nmt-DK-XqG"/>
                             <constraint firstItem="C9t-rN-Axj" firstAttribute="leading" secondItem="3wr-TH-Nkv" secondAttribute="trailing" constant="10" id="Pfb-3U-dtd"/>
-                            <constraint firstItem="F3M-hv-Ha7" firstAttribute="leading" secondItem="C9t-rN-Axj" secondAttribute="trailing" constant="432" id="R6r-VE-QhS"/>
                             <constraint firstItem="zCR-dD-IEF" firstAttribute="top" secondItem="XMv-DB-cdP" secondAttribute="bottom" constant="8" id="U0s-kj-uUF"/>
+                            <constraint firstAttribute="bottom" secondItem="nMR-91-KJA" secondAttribute="bottom" constant="21" id="U6T-AL-Bkf"/>
+                            <constraint firstItem="nMR-91-KJA" firstAttribute="leading" secondItem="C9t-rN-Axj" secondAttribute="trailing" constant="6" id="Wge-Id-gOP"/>
+                            <constraint firstItem="ieY-Ay-dNX" firstAttribute="leading" secondItem="4Pe-Uf-q0h" secondAttribute="trailing" constant="8" symbolic="YES" id="XAM-Bm-w1N"/>
                             <constraint firstItem="C9t-rN-Axj" firstAttribute="leading" secondItem="3wr-TH-Nkv" secondAttribute="trailing" constant="10" id="agF-kr-c3T"/>
                             <constraint firstItem="eXo-OC-Brj" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="dkY-Ab-Xb7"/>
                             <constraint firstItem="C9t-rN-Axj" firstAttribute="top" secondItem="uht-z3-qOQ" secondAttribute="bottom" constant="20" id="eEz-tq-k9r"/>
+                            <constraint firstItem="F3M-hv-Ha7" firstAttribute="leading" secondItem="ieY-Ay-dNX" secondAttribute="trailing" constant="8" symbolic="YES" id="owr-qP-tod"/>
                             <constraint firstItem="pAU-HT-xEe" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="pCl-ue-GD6"/>
                             <constraint firstAttribute="trailing" secondItem="F3M-hv-Ha7" secondAttribute="trailing" constant="20" id="pPG-GN-HOx"/>
                             <constraint firstItem="XMv-DB-cdP" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="qCd-Uv-Nph"/>
@@ -901,23 +951,29 @@
                             <constraint firstItem="3wr-TH-Nkv" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="rz5-Ko-fhg"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XMv-DB-cdP" secondAttribute="trailing" constant="8" id="rzh-CT-8Xx"/>
                             <constraint firstItem="zCR-dD-IEF" firstAttribute="leading" secondItem="XMv-DB-cdP" secondAttribute="leading" id="u8e-nQ-mjb"/>
+                            <constraint firstItem="4Pe-Uf-q0h" firstAttribute="leading" secondItem="2Ev-qn-zot" secondAttribute="trailing" constant="8" symbolic="YES" id="vb0-Kj-OIy"/>
+                            <constraint firstAttribute="bottom" secondItem="2Ev-qn-zot" secondAttribute="bottom" constant="24" id="xv8-Qt-qib"/>
                             <constraint firstAttribute="trailing" secondItem="u0m-tF-u4g" secondAttribute="trailing" constant="20" id="zjg-Eb-iOw"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="defaultRadio" destination="2Ev-qn-zot" id="1HF-LR-M59"/>
                         <outlet property="headerScrollView" destination="zCR-dD-IEF" id="jlW-nx-3Zf"/>
                         <outlet property="headerTextView" destination="inU-vR-8Ll" id="Xi0-sy-I6m"/>
                         <outlet property="inputScrollView" destination="uht-z3-qOQ" id="Gxx-E7-1ZV"/>
                         <outlet property="inputTextView" destination="sEE-iu-Ty3" id="MgV-QJ-lQr"/>
+                        <outlet property="keywordDropFix" destination="nMR-91-KJA" id="yqT-ML-pL9"/>
+                        <outlet property="lowerCamleRadio" destination="4Pe-Uf-q0h" id="Cqy-gn-2Qa"/>
                         <outlet property="messagesScrollView" destination="u0m-tF-u4g" id="rH4-G1-Ya6"/>
                         <outlet property="messagesTextView" destination="TKW-5P-Syr" id="Cvk-sa-9Ld"/>
+                        <outlet property="snakeRadio" destination="ieY-Ay-dNX" id="z9a-pE-gyR"/>
                         <outlet property="tipsTextField" destination="eXo-OC-Brj" id="mV5-pH-0kk"/>
                         <outlet property="validJsonTipsTF" destination="eXo-OC-Brj" id="HBc-PJ-E4v"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162" y="1202.5"/>
+            <point key="canvasLocation" x="162" y="1202"/>
         </scene>
     </scenes>
 </document>

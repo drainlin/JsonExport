@@ -67,4 +67,4 @@ let KEYWORDS = [
     "description"
 ]
 
-let KEYWORDSUFFIX = "Field"
+var KEYWORDSUFFIX = "Field"

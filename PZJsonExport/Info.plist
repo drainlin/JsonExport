@@ -28,5 +28,8 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+    <key>NSContactsUsageDescription</key>
+    <string>We need access to your contacts for marking reason</string>
+
 </dict>
 </plist>

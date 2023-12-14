@@ -86,3 +86,9 @@ extension String {
         self = capitalizingFirstLetter()
     }
 }
+
+enum OutputPropertyMode {
+    case DefaultMode
+    case LowerCamelMode
+    case SnakeMode
+}
