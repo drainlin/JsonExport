@@ -205,7 +205,8 @@ private extension PZParse {
                     jsonInfo.mappingKeywordsTable[tmpClassName]?.append("@\"\(key)\":@\"\(name)\"")
                 }
             }
-            if mode != .DefaultMode {
+            if mode != .DefaultMode && originName != name{
+                
                 if jsonInfo.mappingKeywordsTable[tmpClassName] == nil {
                     jsonInfo.mappingKeywordsTable[tmpClassName] = ["@\"\(name)\":@\"\(originName)\""]
                 } else {

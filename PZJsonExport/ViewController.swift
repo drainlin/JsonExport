@@ -32,10 +32,11 @@ class ViewController: NSViewController, NSTextViewDelegate, NSUserNotificationCe
         PZJsonInfo.shared.rootClassName = sender.stringValue.count > 0 ? sender.stringValue : "RootClass"
         parse()
     }
+
     @IBAction func keywordDropFixChanged(_ sender: Any) {
         parse()
     }
-    
+
     @IBAction func classPrefixChanged(_ sender: NSTextField) {
         PZJsonInfo.shared.classPrefix = sender.stringValue
         parse()
@@ -93,9 +94,11 @@ class ViewController: NSViewController, NSTextViewDelegate, NSUserNotificationCe
     }
 
     func textDidChange(_ notification: Notification) {
-        var droplast = keywordDropFix.stringValue.replacingOccurrences(of: " ", with: "")
+        let droplast = keywordDropFix.stringValue.replacingOccurrences(of: " ", with: "")
         if droplast != "" {
             KEYWORDSUFFIX = droplast
+        } else {
+            KEYWORDSUFFIX = "Field"
         }
         parse()
     }
