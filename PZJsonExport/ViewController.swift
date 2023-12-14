@@ -45,10 +45,10 @@ class ViewController: NSViewController, NSTextViewDelegate, NSUserNotificationCe
         didSet {
             if  validJson == true {
                 self.tipsTextField.textColor = NSColor.green
-                self.tipsTextField.stringValue = "Valid Json Data"
+                self.tipsTextField.stringValue = "JSON格式正确"
             } else {
                 self.tipsTextField.textColor = NSColor.red
-                self.tipsTextField.stringValue = "Invalid Json Data"
+                self.tipsTextField.stringValue = "JSON格式有误"
             }
         }
     }
@@ -108,7 +108,7 @@ extension ViewController {
         openPanel.canChooseFiles = false
         openPanel.canChooseDirectories = true
         openPanel.canCreateDirectories = true
-        openPanel.prompt = "Choose"
+        openPanel.prompt = "保存"
         openPanel.beginSheetModal(for: self.view.window!) { (response) -> Void in
             if  response.rawValue == NSFileHandlingPanelOKButton {
                 self.saveToPath(openPanel.url!.path)
@@ -152,8 +152,8 @@ extension ViewController {
     func showDoneSuccessfully()
     {
         let notification = NSUserNotification()
-        notification.title = "Success!"
-        notification.informativeText = "Your model files have been generated successfully."
+        notification.title = "保存成功!"
+        notification.informativeText = "你的模型文件已经保存到指定文件夹"
         notification.deliveryDate = Date()
         
         let center = NSUserNotificationCenter.default

@@ -14,6 +14,7 @@
 		19FD631D20807FE2001F03ED /* NoodleLineNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FD631920807FE2001F03ED /* NoodleLineNumberView.m */; };
 		19FD631E20807FE2001F03ED /* NoodleLineNumberMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FD631B20807FE2001F03ED /* NoodleLineNumberMarker.m */; };
 		6281477B2B29787D00EA9D2C /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281477A2B29787D00EA9D2C /* Extension+String.swift */; };
+		628147832B2AAE7100EA9D2C /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628147822B2AAE7100EA9D2C /* MainWindowController.swift */; };
 		867EA0BD9EEC90C1D241E208 /* Pods_PZJsonExport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A49BBAD443288364969FE15 /* Pods_PZJsonExport.framework */; };
 		C6041BD92081D914007ABB13 /* PZParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6041BD82081D914007ABB13 /* PZParse.swift */; };
 		C6041BE6208261E5007ABB13 /* PZConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6041BE5208261E5007ABB13 /* PZConstant.swift */; };
@@ -36,6 +37,7 @@
 		26F435FCC38720FA560E8CE4 /* Pods-PZJsonExport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PZJsonExport.release.xcconfig"; path = "Pods/Target Support Files/Pods-PZJsonExport/Pods-PZJsonExport.release.xcconfig"; sourceTree = "<group>"; };
 		2A414CE9369129295D5EEE54 /* Pods-PZJsonExport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PZJsonExport.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PZJsonExport/Pods-PZJsonExport.debug.xcconfig"; sourceTree = "<group>"; };
 		6281477A2B29787D00EA9D2C /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		628147822B2AAE7100EA9D2C /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		C6041BD82081D914007ABB13 /* PZParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PZParse.swift; sourceTree = "<group>"; };
 		C6041BE5208261E5007ABB13 /* PZConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PZConstant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 				1913B355207F0CA300F4498F /* AppDelegate.swift */,
 				C6041BE5208261E5007ABB13 /* PZConstant.swift */,
 				1913B357207F0CA300F4498F /* ViewController.swift */,
+				628147822B2AAE7100EA9D2C /* MainWindowController.swift */,
 				1913B35B207F0CA300F4498F /* Main.storyboard */,
 				C6041BD72081D87F007ABB13 /* Supporting Files */,
 			);
@@ -252,6 +255,7 @@
 				1913B356207F0CA300F4498F /* AppDelegate.swift in Sources */,
 				19FD631E20807FE2001F03ED /* NoodleLineNumberMarker.m in Sources */,
 				C6041BD92081D914007ABB13 /* PZParse.swift in Sources */,
+				628147832B2AAE7100EA9D2C /* MainWindowController.swift in Sources */,
 				C6041BE6208261E5007ABB13 /* PZConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
